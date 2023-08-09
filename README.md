@@ -1,34 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Clone Tab News
 
-## Getting Started
+## About
 
-First, run the development server:
+This is a project developed during the Course Web Dev Filipe Deschamps.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<!-- emoji screenshot here  -->
+## Screenshots 📸
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<!-- <p align="center">
+  <img alt="Simulator Screenshot - iPhone 14 - 2023-07-30 at 10 33 36" src="https://github.com/Natanaelvich/iweather_ignite-rocketseat-23/assets/52014318/9e29ffb9-f61b-4f96-8407-45dcb7e9b6f1"
+    width="200px">
+    <img alt="Simulator Screenshot - iPhone 14 - 2023-07-30 at 10 33 44" src="https://github.com/Natanaelvich/iweather_ignite-rocketseat-23/assets/52014318/c28756c3-0f68-41eb-9dc3-c4bdae6adb30"
+    width="200px">
+    <img alt="Simulator Screenshot - iPhone 14 - 2023-07-30 at 10 33 49" src="https://github.com/Natanaelvich/iweather_ignite-rocketseat-23/assets/52014318/54b06e0c-115d-4a92-82c8-be0449a8980e"
+    width="200px">
+</p> -->
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Videos 📹
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## Technologies
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- React
+- Next.js
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This repository is licensed under the MIT License. See the [LICENSE](/LICENSE) file for details.
