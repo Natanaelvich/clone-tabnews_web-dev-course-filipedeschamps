@@ -35,6 +35,9 @@ This is a project developed during the Course Web Dev Filipe Deschamps.
 
 - React
 - Next.js
+- Jest
+- Jest-dom
+- React Testing Library
 
 ## License
 
