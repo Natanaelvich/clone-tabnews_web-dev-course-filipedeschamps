@@ -1,5 +1,5 @@
 module.exports = {
-    setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+    setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
     collectCoverage: true,
     // on node 14.x coverage provider v8 offers good speed and more or less good report
     coverageProvider: 'v8',
