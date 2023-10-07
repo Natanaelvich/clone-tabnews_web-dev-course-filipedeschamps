@@ -14,6 +14,14 @@
           ],
           "order": 0,
           "autoExecuteCommands": true
+        },
+        {
+          "name": "docker",
+          "commands": [
+            "docker-compose -f infra/compose.yaml up"
+          ],
+          "order": 0,
+          "autoExecuteCommands": true
         }
       ]
     ]
