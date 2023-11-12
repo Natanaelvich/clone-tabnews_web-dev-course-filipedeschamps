@@ -12,7 +12,6 @@ async function query(queryObject: any) {
   const result = await client.query(queryObject);
   await client.end();
   return result;
-  return result;
 }
 
 const database = {
