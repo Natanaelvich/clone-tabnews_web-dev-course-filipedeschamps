@@ -1,5 +1,5 @@
 {
-  "$schema": "https://cdn.statically.io/gh/nguyenngoclongdev/cdn/main/schema/v9/terminal-keeper.json",
+  "$schema": "https://cdn.statically.io/gh/nguyenngoclongdev/cdn/main/schema/v10/terminal-keeper.json",
   "theme": "tribe",
   "active": "default",
   "activateOnStartup": true,
@@ -11,14 +11,6 @@
           "name": "dev",
           "commands": [
             "yarn dev"
-          ],
-          "order": 0,
-          "autoExecuteCommands": true
-        },
-        {
-          "name": "docker",
-          "commands": [
-            "docker-compose -f infra/compose.yaml up"
           ],
           "order": 0,
           "autoExecuteCommands": true
