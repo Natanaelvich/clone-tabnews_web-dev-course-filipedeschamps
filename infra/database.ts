@@ -1,40 +1,57 @@
-import { env } from "@/utils/env";
-import { Client } from "pg";
+import { Client, QueryResult, QueryConfig } from "pg";
 
-async function query(queryObject: string | { text: string; values: any[] }) {
+interface ClientConfig {
+  host: string;
+  port: number;
+  user: string;
+  database: string;
+  password: string;
+  ssl: boolean | { ca: string };
+}
+
+function getSSLValues(): boolean | { ca: string } {
+  if (process.env.POSTGRES_CA) {
+    return {
+      ca: process.env.POSTGRES_CA as string,
+    };
+  }
+
+  return process.env.NODE_ENV === "production" ? true : false;
+}
+
+async function getNewClient(): Promise<Client> {
   const client = new Client({
-    host: env.POSTGRES_HOST,
-    port: Number(env.POSTGRES_PORT),
-    user: env.POSTGRES_USER,
-    database: env.POSTGRES_DB,
-    password: env.POSTGRES_PASSWORD,
+    host: process.env.POSTGRES_HOST as string,
+    port: Number(process.env.POSTGRES_PORT),
+    user: process.env.POSTGRES_USER as string,
+    database: process.env.POSTGRES_DB as string,
+    password: process.env.POSTGRES_PASSWORD as string,
     ssl: getSSLValues(),
   });
 
-  try {
-    await client.connect();
-    const result = await client.query(queryObject);
-    return result;
-  } catch (error) {
-    console.error(error);
-    throw error;
-  } finally {
-    await client.end();
-  }
+  await client.connect();
+  return client;
+}
+
+async function query(queryObject: QueryConfig): Promise<QueryResult> {
+    let client: Client | null = null;
+    try {
+        client = await getNewClient();
+        const result = await client.query(queryObject);
+        return result;
+    } catch (error) {
+        console.error(error);
+        throw error;
+    } finally {
+        if (client) {
+            await client.end();
+        }
+    }
 }
 
 const database = {
-    query: query,
+  query,
+  getNewClient,
 };
 
 export default database;
-
-function getSSLValues() {
-    if (process.env.POSTGRES_CA) {
-        return {
-            ca: process.env.POSTGRES_CA,
-        };
-    }
-
-    return process.env.NODE_ENV === "development" ? false : true;
-}
